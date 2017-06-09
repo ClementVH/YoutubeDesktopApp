@@ -2,13 +2,17 @@
   "name": "youtube-desktop-app",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "dist/main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-electron": "ng build --base-href . && copy src\\electron\\* dist",
+    "electron": "electron .",
+    "copy": "copy src\\electron\\* dist"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +25,11 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "electron": "^1.6.10",
+    "fs": "0.0.1-security",
     "rxjs": "^5.1.0",
+    "socket.io-client": "^2.0.2",
+    "ytdl-core": "^0.14.2",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
